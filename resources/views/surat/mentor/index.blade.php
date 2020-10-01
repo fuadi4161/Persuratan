@@ -8,7 +8,7 @@
 			<ul class="nav nav-tabs" id="myIconTab" role="tablist">
 			<h3 class="" style="margin: 0 20px 0px 0px;padding: 5px;">Surat Masuk</h3>
 			</ul>
-				<a href="/mentor/buatsurat"><li  class="btn btn-danger btn-sm mt-2" width="10%" >Buat Surat</li></a>
+				<a href="{{ url('/mentor/buatsurat')}}"><li  class="btn btn-danger btn-sm mt-2" width="10%" >Buat Surat</li></a>
 			<div class="tab-content" id="myIconTabContent" style="padding: 1rem 0 !important; ">
 				<div class="tab-pane fade show active" id="homeIcon" role="tabpanel" aria-labelledby="home-icon-tab">
 					<table class="display table" id="masuk" style="width:100%">

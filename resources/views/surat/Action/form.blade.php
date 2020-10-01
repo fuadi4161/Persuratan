@@ -61,6 +61,18 @@
                           </select>
                           </div>
                       </div>
+                      @role ('mentor')
+                      <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="picker1">Kategori</label>
+                          <select class="form-control" name="priority">
+                          @foreach ($priority as $p)
+                              <option value="{{ $p->id }}">{{ $p->name }}</option>
+                          @endforeach
+                          </select>
+                          </div>
+                      </div>
+                      @endrole
                       <div class="col-sm-12">
                         <label for="alamat">Buat Surat</label>
                               <textarea name="perihal" class="form-control" aria-label="With textarea " id="perihal"></textarea>

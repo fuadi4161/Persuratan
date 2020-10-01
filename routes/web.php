@@ -69,7 +69,7 @@ Route::group(['prefix'=>'mentor','middleware' => ['role:mentor']], function () {
 	Route::get('/chat', 'Chat\ChatController@index')->name('mentor.chat');
 	Route::get('/suratmasuk', 'Persuratan\DisposisiController@mentorsuratmasuk');
 	Route::get('/suratkeluar', 'Persuratan\DisposisiController@mentorsuratkeluar');
-	Route::get('/buatsurat', 'Persuratan\PersuratanController@create');
+	Route::get('/buatsurat', 'Persuratan\DisposisiController@create');
 	Route::get('/buatsuratkeluar', 'Persuratan\DisposisiController@createkeluar');
 	Route::post('/kirimsurat', 'Persuratan\DisposisiController@mentorstore');
 	Route::post('/kirimsuratkeluar', 'Persuratan\DisposisiController@mentorstorekeluar');
