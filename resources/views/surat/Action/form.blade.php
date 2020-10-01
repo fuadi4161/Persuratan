@@ -34,7 +34,12 @@
                 </div>
                 <div class="row">
                 <div class="col-sm-12">
-                  <form action="{{url('kirimsurat')}}" method="post"  enctype="multipart/form-data">
+                  @role ('mentor')
+                  <form action="{{ url('/mentor/kirimsurat')}}" method="post"  enctype="multipart/form-data">
+                  @endrole
+                  @role ('tenant')
+                  <form action="{{ url('/tenant/kirimsurat')}}" method="post"  enctype="multipart/form-data">
+                  @endrole
                     {{ csrf_field() }}
                     @include('layouts.alert', ['$errors' => $errors])
                     <div class="row">
@@ -58,11 +63,7 @@
                       </div>
                       <div class="col-sm-12">
                         <label for="alamat">Buat Surat</label>
-                            <div class="input-group" >
-                              <div class="input-group-prepend">
                               <textarea name="perihal" class="form-control" aria-label="With textarea " id="perihal"></textarea>
-                              </div>
-                            </div>
                           </div>
                         <div class="col-sm-3">
                         <div class="form-group">

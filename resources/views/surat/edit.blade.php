@@ -67,10 +67,7 @@
                       </div>
                         <div class="col-sm-12">
                         <label for="alamat">Buat Surat</label>
-                            <div class="input-group">
-                              <div class="input-group-prepend"></div>
                               <textarea name="perihal" class="form-control" aria-label="With textarea" id="perihal" value="{{ $surat->perihal }}">{{ $surat->perihal }}</textarea>
-                            </div>
                         </div>
                         <div class="col-sm-3">
                         <div class="form-group">
