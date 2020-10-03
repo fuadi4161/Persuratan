@@ -53,7 +53,7 @@
 								<a class="badge badge-success m-2 p-2" href="#">{{ $p->priority->name }}</a></td>
 								@endif
 								<td>{{ $p->created_at }}</td>
-								<td><a class="ul-link-action text-success" href="{{ url('/inkubator/surat/edit/'. $p->id )}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="i-Edit"></i></a><a class="ul-link-action text-danger mr-1" href="#" data-toggle="tooltip" data-placement="top" title="Want To Delete !!!"><i class="i-Eraser-2 delete" surat-id="{{ $p->id }}"></i></a><a class="ul-link-action text-primary mr-1" href="/inkubator/disposisi/{{ $p->id }}" data-toggle="tooltip" data-placement="top" title="Diposisikan !!!"><i class="text-20 i-Right"></i></a></td>
+								<td><a class="ul-link-action text-success" href="{{ url('/inkubator/surat/edit/'. $p->id )}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="i-Edit"></i></a><a class="ul-link-action text-danger mr-1" data-toggle="tooltip" data-placement="top" title="Want To Delete !!!"><i class="i-Eraser-2 delete" surat-id="{{ $p->id }}"></i></a><a class="ul-link-action text-primary mr-1" href="{{ url('/inkubator/disposisi/'.$p->id )}}" data-toggle="tooltip" data-placement="top" title="Diposisi"><i class="text-20 i-Right"></i></a></td>
 							</tr>
 							@endif
 						@endforeach
@@ -92,7 +92,7 @@
 								<a class="badge badge-success m-2 p-2" href="#">{{ $p->priority->name }}</a></td>
 								@endif
 							<td>{{ $p->created_at }}</td>
-							<td><a class="ul-link-action text-success" href="{{ url('/inkubator/surat/edit/'. $p->id )}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="i-Edit"></i></a><a class="ul-link-action text-danger mr-1" href="#"  data-toggle="tooltip" data-placement="top" title="Want To Delete !!!"><i class="i-Eraser-2 delete" surat-id="{{ $p->id }}"></i></a><a class="ul-link-action text-primary mr-1" href="/inkubator/disposisi/{{ $p->id }}" data-toggle="tooltip" data-placement="top" title="Diposisikan !!!"><i class="text-20 i-Right"></i></a></td>
+							<td><a class="ul-link-action text-success" href="{{ url('/inkubator/surat/edit/'. $p->id )}}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="i-Edit"></i></a><a class="ul-link-action text-danger mr-1" href="#"  data-toggle="tooltip" data-placement="top" title="Want To Delete !!!"><i class="i-Eraser-2 delete" surat-id="{{ $p->id }}"></i></a><a class="ul-link-action text-primary mr-1" href="{{ url('/inkubator/disposisi/'.$p->id )}}" data-toggle="tooltip" data-placement="top" title="Diposisi"><i class="text-20 i-Right"></i></a></td>
 						</tr>
 						@endif
 					@endforeach
@@ -131,8 +131,8 @@
     </script>
 	<script type="text/javascript">
 		$('.delete').click(function(){
-
-			var surat_id = $(this).attr('surat-id');
+			var url = "{{ url('inkubator/surat/'.$p->id.'/delete')}}";
+			// var surat_id = $(this).attr('surat-id');
 
 			iziToast.question({
 			timeout: 20000,
@@ -148,7 +148,7 @@
 			buttons: [
 				['<button><b>YES</b></button>', function (instance, toast) {
 		
-					instance.hide({ transitionOut: 'fadeOut' }, toast, 'button', window.location = "/inkubator/surat/"+ surat_id +"/delete ");
+					instance.hide({ transitionOut: 'fadeOut' }, toast, 'button', window.location.href = url, );
 		
 				}, true],
 				['<button>NO</button>', function (instance, toast) {
