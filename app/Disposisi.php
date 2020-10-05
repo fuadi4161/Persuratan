@@ -15,6 +15,6 @@ class Disposisi extends Model
     }
     public function surat(){
 
-        return $this->belongsTo('App\Surat');
+        return $this->belongsToMany('App\Surat');
     }
 }

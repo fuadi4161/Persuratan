@@ -131,8 +131,8 @@
     </script>
 	<script type="text/javascript">
 		$('.delete').click(function(){
-			var url = "{{ url('inkubator/surat/'.$p->id.'/delete')}}";
-			// var surat_id = $(this).attr('surat-id');
+
+			var surat_id = $(this).attr('surat-id');
 
 			iziToast.question({
 			timeout: 20000,
@@ -148,7 +148,7 @@
 			buttons: [
 				['<button><b>YES</b></button>', function (instance, toast) {
 		
-					instance.hide({ transitionOut: 'fadeOut' }, toast, 'button', window.location.href = url, );
+					instance.hide({ transitionOut: 'fadeOut' }, toast, 'button', window.location.href = "/inkubator/surat/"+surat_id+"/delete", );
 		
 				}, true],
 				['<button>NO</button>', function (instance, toast) {

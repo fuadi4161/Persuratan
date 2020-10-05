@@ -201,7 +201,13 @@ class PersuratanController extends Controller
 
     public function destroy($id)
     {
-        $surat  = Surat::findOrFail($id);
+
+        $surat  = Surat::find($id);
+        $surat->Disposisi()->detach();
+  
+        // $comments->post()->associate($post->id);
+        // $post->comments()->attach($comment->id);
+        // $post->comments()->delete();
 
         if ($surat->delete()) {
             Session::flash('success', 'Surat berhasil dihapus');

@@ -22,6 +22,9 @@ class Surat extends Model
         return $this->belongsTo('App\Priority');
     }
 
-    
+    public function disposisi(){
+        
+        return $this->belongsToMany('App\Disposisi','surat_disposisi');
+    }
 }
 
